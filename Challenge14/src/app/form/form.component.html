@@ -1,1 +1,50 @@
-<p>form works!</p>
+<!-- <div>
+    <label for="">
+        Username:
+        <input type="text" [formControl]="username">
+    </label>
+    <label for="">
+        Email:
+        <input type="email" [formControl]="email">
+    </label>
+    <button (click)=changeUsername()>Change Username</button>
+</div>
+
+{{username.value}}
+{{email.value}} -->
+
+<h1>Formulaire d'inscription</h1>
+
+<form>
+    <div>
+        <label for="username">Nom d'utilisateur : </label>
+        <input id="username" type="text" [formControl]="username">
+    </div>
+    <div>
+        <label for="email">Email : </label>
+        <input id="email" type="email" [formControl]="email">
+    </div>
+    <div>
+        <label for="password">Mot de passe : </label>
+        <input id="password" type="password" [formControl]="password">
+    </div>
+    <div>
+        <label for="location">Adresse : </label>
+        <input id="location" type="text" [formControl]="location">
+        <label for="location">Code postal : </label>
+        <input type="number" [formControl]="location">
+        <label for="location">Ville : </label>
+        <input type="text" [formControl]="location">
+
+    </div>
+
+    <button (click)="onSubmit()" type="button">Inscription</button>
+</form>
+
+<div *ngIf="newUser">
+    <h2>Nouvel utilisateur : </h2>
+    Nom : {{username.value}} <br>
+    Email : {{email.value}} <br>
+    Mdp : {{password.value}} <br>
+    Adresse : {{location.value}}
+</div>
